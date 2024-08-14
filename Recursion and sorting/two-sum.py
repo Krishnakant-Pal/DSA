@@ -1,0 +1,18 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        mymap = {}
+        for i , n in enumerate(nums):
+            diff = target - n
+            if diff in mymap:
+                return [mymap[diff],i]
+            mymap[n] = i
+
+# bruteforce
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        for i in range(len(nums)-1):
+            for j in range(i+1, len(nums)):
+                if target == (nums[i] + nums[j]) :
+                    return [i,j]
